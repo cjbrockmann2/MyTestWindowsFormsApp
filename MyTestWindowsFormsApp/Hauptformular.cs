@@ -100,8 +100,6 @@ namespace CopitosWindowsFormsApp
             }
         }
 
-
-
         private void tabControl_Selecting(object sender, TabControlCancelEventArgs e)
         {
             var tab = (TabControl)sender;
@@ -164,8 +162,11 @@ namespace CopitosWindowsFormsApp
 
         private void AddProtocolColumnsToDataTable(DataTable dt)
         {
-            dt.Columns.Add("NTUser", typeof(string));
-            dt.Columns.Add("Timestamp", typeof(DateTime));
+            if (dt != null)
+            {
+                dt.Columns.Add("NTUser", typeof(string));
+                dt.Columns.Add("Timestamp", typeof(DateTime));
+            }
         }
 
 
@@ -194,7 +195,7 @@ namespace CopitosWindowsFormsApp
         #region Personalstamm 
         // ---------------------------------------------------------------------
 
-        private void btnPersonalstammImportieren_Click(object sender, EventArgs e)
+        private void PersonalstammImportieren(object sender, EventArgs e)
         {
             DataTable dt = Einlesen.DatenEinlesen(Singleton.ImportType.xls);
             AddProtocolColumnsToDataTable(dt);
@@ -204,6 +205,10 @@ namespace CopitosWindowsFormsApp
             Auswertung();
         }
 
+        private void personalstammImportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PersonalstammImportieren(sender, e);
+        }
 
         private void dataGridPersonalstammdaten_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -223,15 +228,12 @@ namespace CopitosWindowsFormsApp
             grid.Rows[e.RowIndex].Selected = true;
         }
 
- 
-
-
         #endregion
 
 
         #region Einkauf
         // ---------------------------------------------------------------------
-        private void btnEinkaeufeImportieren_Click(object sender, EventArgs e)
+        private void EinkaeufeImportieren(object sender, EventArgs e)
         {
             DataTable dt = Einlesen.DatenEinlesen(Singleton.ImportType.csv);
             AddProtocolColumnsToDataTable(dt);
@@ -242,6 +244,10 @@ namespace CopitosWindowsFormsApp
             Auswertung();
         }
 
+        private void einkaeufeImportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EinkaeufeImportieren(sender, e);
+        }
         private void dataGridEinkauf_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             var grid = (DataGridView)sender;
@@ -276,6 +282,10 @@ namespace CopitosWindowsFormsApp
             grid.ClearSelection();
             grid.Rows[e.RowIndex].Selected = true;
         }
+
+
+
+
 
         #endregion
 

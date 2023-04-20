@@ -31,13 +31,15 @@
             this.dataGridPersonalstammdaten = new System.Windows.Forms.DataGridView();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageEingabe = new System.Windows.Forms.TabPage();
-            this.btnEinkaeufeImportieren = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridEinkauf = new System.Windows.Forms.DataGridView();
-            this.btnPersonalstammImportieren = new System.Windows.Forms.Button();
             this.tabPageAusgabe = new System.Windows.Forms.TabPage();
             this.dataGridViewAusgabe = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.datenLöschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalstammImportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.einkaeufeImportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonalstammdaten)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageEingabe.SuspendLayout();
@@ -71,9 +73,9 @@
             // 
             // tabPageEingabe
             // 
-            this.tabPageEingabe.Controls.Add(this.btnEinkaeufeImportieren);
+            this.tabPageEingabe.Controls.Add(this.label2);
+            this.tabPageEingabe.Controls.Add(this.label1);
             this.tabPageEingabe.Controls.Add(this.dataGridEinkauf);
-            this.tabPageEingabe.Controls.Add(this.btnPersonalstammImportieren);
             this.tabPageEingabe.Controls.Add(this.dataGridPersonalstammdaten);
             this.tabPageEingabe.Location = new System.Drawing.Point(4, 22);
             this.tabPageEingabe.Name = "tabPageEingabe";
@@ -83,15 +85,15 @@
             this.tabPageEingabe.Text = "Eingabe";
             this.tabPageEingabe.UseVisualStyleBackColor = true;
             // 
-            // btnEinkaeufeImportieren
+            // label1
             // 
-            this.btnEinkaeufeImportieren.Location = new System.Drawing.Point(575, 290);
-            this.btnEinkaeufeImportieren.Name = "btnEinkaeufeImportieren";
-            this.btnEinkaeufeImportieren.Size = new System.Drawing.Size(145, 23);
-            this.btnEinkaeufeImportieren.TabIndex = 4;
-            this.btnEinkaeufeImportieren.Text = "Einkäufe importieren";
-            this.btnEinkaeufeImportieren.UseVisualStyleBackColor = true;
-            this.btnEinkaeufeImportieren.Click += new System.EventHandler(this.btnEinkaeufeImportieren_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Personalstamm";
             // 
             // dataGridEinkauf
             // 
@@ -103,16 +105,6 @@
             this.dataGridEinkauf.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridEinkauf_CellBeginEdit);
             this.dataGridEinkauf.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEinkauf_CellEndEdit);
             this.dataGridEinkauf.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridEinkauf_CellValidating);
-            // 
-            // btnPersonalstammImportieren
-            // 
-            this.btnPersonalstammImportieren.Location = new System.Drawing.Point(575, 7);
-            this.btnPersonalstammImportieren.Name = "btnPersonalstammImportieren";
-            this.btnPersonalstammImportieren.Size = new System.Drawing.Size(145, 23);
-            this.btnPersonalstammImportieren.TabIndex = 2;
-            this.btnPersonalstammImportieren.Text = "Personalstamm importieren";
-            this.btnPersonalstammImportieren.UseVisualStyleBackColor = true;
-            this.btnPersonalstammImportieren.Click += new System.EventHandler(this.btnPersonalstammImportieren_Click);
             // 
             // tabPageAusgabe
             // 
@@ -139,7 +131,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datenLöschenToolStripMenuItem});
+            this.datenLöschenToolStripMenuItem,
+            this.personalstammImportierenToolStripMenuItem,
+            this.einkaeufeImportierenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1158, 24);
@@ -152,6 +146,30 @@
             this.datenLöschenToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.datenLöschenToolStripMenuItem.Text = "Daten löschen";
             this.datenLöschenToolStripMenuItem.Click += new System.EventHandler(this.datenLöschenToolStripMenuItem_Click);
+            // 
+            // personalstammImportierenToolStripMenuItem
+            // 
+            this.personalstammImportierenToolStripMenuItem.Name = "personalstammImportierenToolStripMenuItem";
+            this.personalstammImportierenToolStripMenuItem.Size = new System.Drawing.Size(166, 20);
+            this.personalstammImportierenToolStripMenuItem.Text = "Personalstamm importieren";
+            this.personalstammImportierenToolStripMenuItem.Click += new System.EventHandler(this.personalstammImportierenToolStripMenuItem_Click);
+            // 
+            // einkaeufeImportierenToolStripMenuItem
+            // 
+            this.einkaeufeImportierenToolStripMenuItem.Name = "einkaeufeImportierenToolStripMenuItem";
+            this.einkaeufeImportierenToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.einkaeufeImportierenToolStripMenuItem.Text = "Einkäufe importieren";
+            this.einkaeufeImportierenToolStripMenuItem.Click += new System.EventHandler(this.einkaeufeImportierenToolStripMenuItem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Einkäufe";
             // 
             // Hauptformular
             // 
@@ -167,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPersonalstammdaten)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPageEingabe.ResumeLayout(false);
+            this.tabPageEingabe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEinkauf)).EndInit();
             this.tabPageAusgabe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAusgabe)).EndInit();
@@ -181,13 +200,15 @@
         private System.Windows.Forms.DataGridView dataGridPersonalstammdaten;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageEingabe;
-        private System.Windows.Forms.Button btnEinkaeufeImportieren;
         private System.Windows.Forms.DataGridView dataGridEinkauf;
-        private System.Windows.Forms.Button btnPersonalstammImportieren;
         private System.Windows.Forms.TabPage tabPageAusgabe;
         private System.Windows.Forms.DataGridView dataGridViewAusgabe;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem datenLöschenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personalstammImportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem einkaeufeImportierenToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
